@@ -25,19 +25,19 @@ const routes = [{
         component: () =>
             import ('../views/Back/Dashboard.vue'),
         children: [{
-                path: '/productManage',
+                path: 'productManage',
                 component: () =>
-                    import ('../views/Back/ProductManage')
+                    import ('../views/Back/ProductManage.vue')
             },
             {
-                path: '/orderManage',
+                path: 'orderManage',
                 component: () =>
-                    import ('../views/Back/ProductManage')
+                    import ('../views/Back/OrderManage.vue')
             },
             {
-                path: '/couponManage',
+                path: 'couponManage',
                 component: () =>
-                    import ('../views/Back/CouponManage')
+                    import ('../views/Back/CouponManage.vue')
             }
         ]
     },
