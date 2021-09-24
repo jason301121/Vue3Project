@@ -1,14 +1,23 @@
 <template>
 <Navbar></Navbar>
+<Messages></Messages>
 <router-view></router-view>
 </template>
 
 <script>
+import emitter from '@/methods/emitter';
 import Navbar from '@/components/Back/Navbar.vue';
+import Messages from '@/components/all/MessageList.vue';
 
 export default {
     components:{
-        Navbar
+        Navbar,
+        Messages
+    },
+    provide() {
+        return {
+            emitter,
+        };
     },
     created() {
         const token = document.cookie.replace(/(?:(?:^|.*;\s*)buyFresh\s*\=\s*([^;]*).*$)|^.*$/, "$1");

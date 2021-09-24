@@ -54,6 +54,7 @@ export default {
                 const { token,expired } = res.data;
                 document.cookie = `buyFresh=${token};expires=${new Date(expired)}`;
                 this.$router.push('/dashboard');
+                this.$MessageState(res,'後台登入');
                 }
             })
         }

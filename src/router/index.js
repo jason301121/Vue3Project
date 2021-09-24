@@ -16,9 +16,30 @@ const routes = [{
             import ( /* webpackChunkName: "about" */ '../views/About.vue')
     },
     {
+        path: '/product',
+        component: () =>
+            import ('../views/Front/Product.vue'),
+    },
+    {
         path: '/login',
         component: () =>
             import ('../views/Login.vue'),
+    },
+    {
+        path: '/cart',
+        component: () =>
+            import ('../views/Front/Cart.vue'),
+    },
+    {
+        path: '/checkoutform',
+        component: () =>
+            import ('../views/Front/CheckoutForm.vue'),
+    },
+    {
+        name: 'checkoutpay',
+        path: '/checkoutpay/:orderId',
+        component: () =>
+            import ('../views/Front/CheckoutPay')
     },
     {
         path: '/dashboard',
