@@ -26,9 +26,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table-nowrap fs-4" v-for="item in cart.carts" :key="item.id">
-                        <td><a href="#" class="shake" @click.prevent="delCart(item.id)"><i class="bi bi-trash-fill" style="font-size: 1.5rem; color:red;"></i></a></td>
-                        <td class="fw-bold fs-3">{{ item.product.title }}</td>
+                    <tr class="text-nowrap fs-4" v-for="item in cart.carts" :key="item.id">
+                        <td><a href="#" class="shake"><i class="bi bi-trash-fill shake" style="font-size: 1.5rem; color:red;"  @click.prevent="delCart(item.id)"></i></a></td>
+                        <td class="fw-bold fs-4 text-nowrap">{{ item.product.title }}</td>
                         <td data-title="單價" class="td-before">{{ $filters.currency(item.product.price) }} / {{ item.product.unit }}</td>
                         <td data-title="數量" class="td-before circle_input d-flex align-items-center">
                                 <button type="button" class="circle_input_btn" @click.prevent="editCart(item, item.qty-1)"
@@ -72,7 +72,7 @@
         <div class="row mb-5" v-else>
             <div class="d-flex flex-column justify-content-center align-items-center my-2">
                 <h2 class="my-5">購物車內沒有商品哦~</h2>
-                <router-link to="/product" class="main_btn navbar_btn">再去逛逛</router-link>
+                <router-link to="/product" class="main_btn px-5 py-1">再去逛逛</router-link>
             </div>
         </div>
     </div>

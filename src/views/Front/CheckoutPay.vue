@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12 checkout_orderlist table-responsive-md">
                 <p class="fs-2 text-center fw-bold">購物清單</p>
-                <table class="table align-middle ">
+                <table class="table align-middle text-nowrap">
                     <thead>
                         <tr>
                             <th width="30%" class="text-center">商品名稱</th>
@@ -23,7 +23,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="item in order.products" :key="item.id" class="fs-6">
-                            <td class="text-center">{{ item.product.title }}</td>
+                            <td class="text-center ">{{ item.product.title }}</td>
                             <td class="text-center">{{ $filters.currency(item.product.price) }}</td>
                             <td class="text-center">{{ item.qty }} / {{ item.product.unit }}</td>
                             <td class="text-end">{{ $filters.currency(item.final_total) }}</td>
@@ -38,7 +38,7 @@
             </div>
             <div class="col-12 mt-3">
                 <p class="fs-2 text-center fw-bold">訂購人資訊</p>
-                <div class="checkout_info p-3 d-flex">
+                <div class="checkout_info p-3 d-flex text-nowrap">
                     <table>
                         <tbody>
                         <tr>

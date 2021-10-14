@@ -23,9 +23,9 @@
                         <div v-for="item in cart.carts" :key="item.product.id" class="d-flex align-items-center my-2">
                             <div class="col-4 d-flex align-items-center ">
                                 <a href="#" class="shake" @click.prevent="delCart(item.id)"><i class="bi bi-trash-fill" style="font-size: 1.5rem; color:red;"></i></a>
-                                <div class="text-start ms-2">{{ item.product.title }}</div>
+                                <div class="text-start text-nowrap ms-2">{{ item.product.title }}</div>
                             </div>
-                            <div class="col-8 ps-2 d-flex align-items-center justify-content-start">
+                            <div class="col-8 ms-3 d-flex align-items-center justify-content-center">
                                 <div class="input-number-group-sm input-group-sm d-flex align-items-center">
                                     <button type="button" class="main_btn edit_dash_btn" @click.prevent="editCart(item, item.qty-1)"
                                     :disabled="item.qty == 1" >
@@ -42,7 +42,7 @@
                         <hr>
                         <p class="text-end me-3 fs-4 fw-bolder"><span>總金額 :</span> $ {{ $filters.currency(cart.total) }}</p>
                         <div class="d-grid gap-2">
-                            <router-link to="/cart" class="main_btn navbar_btn">結帳去</router-link>
+                            <router-link to="/cart" class="main_btn py-1 fs-5 fw-normal">結帳去</router-link>
                         </div>
                     </template>
                     <div v-else class="text-center mt-2">
