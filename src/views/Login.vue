@@ -51,12 +51,17 @@ export default {
             this.$http.post(api,this.user)
             .then((res)=>{
                 if(res.data.success){
-                const { token,expired } = res.data;
-                document.cookie = `buyFresh=${token};expires=${new Date(expired)}`;
-                this.$router.push('/dashboard/productManage');
-                this.$swal({
-                    title:`後臺登入成功`,
-                    icon: 'success',
+                    const { token,expired } = res.data;
+                    document.cookie = `buyFresh=${token};expires=${new Date(expired)}`;
+                    this.$router.push('/dashboard/productManage');
+                    this.$swal({
+                        title:`後臺登入成功`,
+                        icon: 'success',
+                })
+                }else{
+                    this.$swal({
+                    title:`後臺登入失敗`,
+                    icon: 'error',
                 })
                 }
             })

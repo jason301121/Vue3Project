@@ -2,7 +2,9 @@
 .top_background {
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-position: center center;
+    position: relative;
+    // background-attachment: fixed;
     min-height: 50vh;
     div {
         background: rgba(201, 200, 200, 0.5);
