@@ -2,7 +2,7 @@
     <div class="container mt-5">
         <form class="row justify-content-center" @submit.prevent="signIn">
         <div class="col-md-6">
-            <h1 class="h3 mb-3 font-weight-normal">後台管理</h1>
+            <h1 class="mb-3 fw-bold text-center">後台管理</h1>
             <div class="mb-2">
             <label for="inputEmail" class="sr-only">Email address</label>
             <input
@@ -27,8 +27,8 @@
             />
             </div>
         
-            <div class="text-end mt-4">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">登入</button>
+            <div class="text-end my-4">
+            <button class="main_btn py-2 px-3 fs-5" type="submit">登入</button>
             </div>
         </div>
         </form>
@@ -53,8 +53,11 @@ export default {
                 if(res.data.success){
                 const { token,expired } = res.data;
                 document.cookie = `buyFresh=${token};expires=${new Date(expired)}`;
-                this.$router.push('/dashboard');
-                this.$MessageState(res,'後台登入');
+                this.$router.push('/dashboard/productManage');
+                this.$swal({
+                    title:`後臺登入成功`,
+                    icon: 'success',
+                })
                 }
             })
         }

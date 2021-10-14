@@ -2,8 +2,8 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref="modal">
         <div class="modal-dialog modal-xl" role="document" >
             <div class="modal-content border-0">
-                <div class="modal-header bg-dark text-white">
-                    <h3 class="modal-title" id="exampleModalLabel">
+                <div class="modal-header back_modal_header">
+                    <h3 class="modal-title fw-bold" id="exampleModalLabel">
                         <slot name="modalCategory"></slot>
                     </h3>
                     <button type="button" class="btn-close"
@@ -137,7 +137,7 @@
                     <button type="button" class="btn btn-outline-secondary"
                             data-bs-dismiss="modal">取消
                     </button>
-                    <button type="button" class="btn btn-primary" @click="$emit('update-product',tempProduct)">確認</button>
+                    <button type="button" class="btn main_btn" @click="$emit('update-product',tempProduct)">確認</button>
                 </div>
             </div>
         </div>

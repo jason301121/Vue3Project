@@ -1,0 +1,86 @@
+//按鈕行為
+.main_btn {
+    background-color: darkgreen !important;
+    color: white !important;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    &:hover:not([disabled]) {
+        background-color: rgb(0, 163, 0) !important;
+    }
+}
+
+//數量按鈕效果
+.edit_add_btn {
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important
+}
+
+.edit_dash_btn {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important
+}
+
+
+/*隱藏number箭頭*/
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+//圓形輸入效果
+.circle_input {
+    font-size: 24px;
+    input {
+        width: 10%;
+    }
+    .circle_input_btn {
+        color: darkgreen;
+        background-color: white;
+        border: none;
+        font-size: 30px;
+        &:hover:not([disabled]) {
+            color: rgb(0, 163, 0);
+        }
+    }
+}
+
+//footer效果
+.footer {
+    a:not([hover]) {
+        color: white;
+    }
+}
+
+//主題字體
+.logo_font {
+    font-family: Caveat, sans-serif;
+}
+
+//sweetlert
+.swal2-top-end {
+    top: 80px !important;
+}
+
+.swal2-container {
+    width: 300px !important;
+}
+
+.swal2-title {
+    font-size: 1.25em !important;
+    text-align: center;
+    font-weight: 600;
+}

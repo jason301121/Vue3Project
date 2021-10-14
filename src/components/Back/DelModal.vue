@@ -9,8 +9,11 @@
                     </h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" v-if="item.title">
                     確定要刪除 <strong class="text-danger">{{ item.title }}</strong> 嗎? (刪除後將無法恢復)
+                </div>
+                <div class="modal-body" v-else>
+                    確定要刪除嗎? (刪除後將無法恢復)
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>

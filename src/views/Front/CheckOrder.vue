@@ -1,17 +1,22 @@
 <template>
+<Loading :active="isLoading"></Loading>
+    <div class="top_background checkOrder_backImg d-flex justify-content-center align-items-center">
+        <div class="mx-auto fw-bold">
+            訂單查詢
+        </div>
+    </div>
     <div class="container">
-        <div class="row d-flex justify-content-center my-4">
-            <div class="col-12">
-                <ul class="d-flex flex-wrap justify-content-around  fw-bold fs-2 list-unstyled">
-                    <li class="check_flow mb-3">1.確認訂單</li>
-                    <li class="check_flow mb-3">2.填寫資料</li>
-                    <li class="check_flow mb-3 check_flow_active">3.訂單結帳</li>
-                </ul>
+        <div class="row">
+            <div class="col-12 py-5">
+                <div class="input-group justify-content-center">
+                    <input type="text" placeholder="請輸入訂單編號" v-model="orderId" style="width:80%;" class="fs-3">
+                    <button type="button" class="main_btn edit_add_btn fs-3" @click="checkOrder">送出</button>
+                    </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 checkout_orderlist table-responsive-md">
-                <p class="fs-2 text-center fw-bold">購物清單</p>
+        <div class="row my-5" v-if="order.total">
+            <div class="col-12 checkout_orderlist">
+                <p class="fs-2 text-center fw-bold">購物明細</p>
                 <table class="table align-middle ">
                     <thead>
                         <tr>
@@ -22,7 +27,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="item in order.products" :key="item.id" class="fs-6">
+                        <tr v-for="item in order.products" :key="item.id">
                             <td class="text-center">{{ item.product.title }}</td>
                             <td class="text-center">{{ $filters.currency(item.product.price) }}</td>
                             <td class="text-center">{{ item.qty }} / {{ item.product.unit }}</td>
@@ -78,14 +83,13 @@
             </div>
             <div class="row justify-content-center py-3">
                 <button type="button" class="main_btn check_btn" v-if="!order.is_paid" @click="pay" style="width:40%;">確認付款</button>
-                <button type="button" class="main_btn check_btn" style="width:40%;" v-if="order.is_paid" @click="backToHome">繼續逛逛</button>
+                <router-link to="/" class="main_btn check_btn" style="width:40%;" v-else>繼續逛逛</router-link>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-
 export default {
     data() {
         return {
@@ -93,35 +97,34 @@ export default {
             order:{
                 user:{},
             },
+            isLoading:false,
         }
     },
     methods: {
-        getOrder(){
+        checkOrder(){
             const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order/${this.orderId}`;
+            this.isLoading = true;
             this.$http.get(api)
             .then((res)=>{
-                this.order = res.data.order;
-                history.pushState(null, null, document.URL)
-                window.addEventListener('popstate', function (e) {
-                history.pushState(null, null, document.URL)
-                }, false)
+                if(res.data.success){
+                    this.order = res.data.order;
+                }
+                this.isLoading = false;
             })
         },
         pay(){
             const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/pay/${this.orderId}`;
+            this.isLoading = true;
             this.$http.post(api)
             .then((res)=>{
-                this.getOrder();
+                console.log(res);
+                this.checkOrder();
+                this.isLoading = false;
             })
         },
-        backToHome(){
-            this.$router.push('/');
-        }
     },
     created() {
-        this.orderId = this.$route.params.orderId;
-        this.getOrder();
-        
+        this.checkOrder();
     },
 }
 </script>

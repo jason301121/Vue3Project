@@ -1,46 +1,59 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
 
 const routes = [{
         path: '/',
-        name: 'Home',
-        component: Home
-    },
-    {
-        path: '/about',
-        name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
         component: () =>
-            import ( /* webpackChunkName: "about" */ '../views/About.vue')
+            import ('../views/Layout'),
+        children: [{
+                path: '/product',
+                component: () =>
+                    import ('../views/Front/Product.vue'),
+            },
+            {
+                path: '/productdetail/:id',
+                component: () =>
+                    import ('../views/Front/ProductDetail.vue'),
+            },
+            {
+                path: '/login',
+                component: () =>
+                    import ('../views/Login.vue'),
+            },
+            {
+                path: '/cart',
+                component: () =>
+                    import ('../views/Front/Cart.vue'),
+            },
+            {
+                path: '/checkoutform',
+                component: () =>
+                    import ('../views/Front/CheckoutForm.vue'),
+            },
+            {
+                name: 'checkoutpay',
+                path: '/checkoutpay/:orderId',
+                component: () =>
+                    import ('../views/Front/CheckoutPay.vue')
+            },
+            {
+                path: '/favorite',
+                component: () =>
+                    import ('../views/Front/Favorite.vue')
+            },
+            {
+                path: '/checkorder',
+                component: () =>
+                    import ('../views/Front/CheckOrder.vue')
+            },
+            {
+                path: '/',
+                component: () =>
+                    import ('../views/Front/Home.vue')
+            }
+        ]
     },
-    {
-        path: '/product',
-        component: () =>
-            import ('../views/Front/Product.vue'),
-    },
-    {
-        path: '/login',
-        component: () =>
-            import ('../views/Login.vue'),
-    },
-    {
-        path: '/cart',
-        component: () =>
-            import ('../views/Front/Cart.vue'),
-    },
-    {
-        path: '/checkoutform',
-        component: () =>
-            import ('../views/Front/CheckoutForm.vue'),
-    },
-    {
-        name: 'checkoutpay',
-        path: '/checkoutpay/:orderId',
-        component: () =>
-            import ('../views/Front/CheckoutPay')
-    },
+
+    //後台
     {
         path: '/dashboard',
         component: () =>
@@ -66,6 +79,10 @@ const routes = [{
 
 const router = createRouter({
     history: createWebHashHistory(),
+    linkActiveClass: 'nav-link_active',
+    scrollBehavior(to, from, savedPosition) {
+        return { left: 0, top: 0 }
+    },
     routes,
 });
 

@@ -1,0 +1,115 @@
+.check_flow {
+    background-color: rgb(235, 235, 235);
+    padding: 10px 50px;
+    border-radius: 50px;
+    color: gray;
+}
+
+.check_flow_active {
+    color: darkgreen;
+}
+
+.check_btn {
+    font-size: 20px;
+    padding: 5px 20px;
+}
+
+.check_coupon_btn {
+    font-size: 20px;
+    padding: 5px 20px;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+//購物車清單行動裝置效果
+.cart_table {
+    td {
+        justify-content: center;
+        img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            object-position: center;
+            margin-right: 16px;
+        }
+    }
+    @include apple {
+        thead {
+            display: none;
+        }
+        td {
+            display: block;
+            border-bottom: none;
+            justify-content: start;
+            text-align: start;
+            font-size: 16px;
+            &:nth-child(1) {
+                padding: 0;
+            }
+            &:nth-child(5) {
+                border-bottom: 1px solid gray !important;
+                padding-right: 16px;
+                margin-bottom: 12px;
+            }
+            i {
+                font-size: 1.5rem;
+            }
+        }
+        .td-before {
+            &:before {
+                content: attr(data-title);
+                display: inline-block;
+                justify-content: start;
+                text-align: start;
+                width: auto;
+                color: #000;
+                min-width: 20%;
+                font-weight: 800;
+                padding-right: 16px;
+            }
+        }
+    }
+}
+
+.checkout_form {
+    background-color: rgba(247, 244, 244, 0.823);
+    label {
+        font-weight: 600;
+        font-size: 20px;
+        margin-left: 5px;
+        margin-bottom: 15px;
+    }
+}
+
+.checkout_orderlist {
+    font-size: 18px;
+    tfoot {
+        margin-top: 5px;
+        border-color: white;
+        font-weight: 600;
+    }
+}
+
+.checkout_info {
+    background-color: rgba(247, 244, 244, 0.823);
+    font-size: 16px;
+    table {
+        // width: 100%;
+        tr {
+            line-height: 50px;
+            th {
+                min-width: 30%;
+                font-size: 24px;
+            }
+            td {
+                text-align: start;
+                padding: 0 15px;
+            }
+        }
+    }
+    @include apple {
+        th {
+            font-size: 18px !important;
+        }
+    }
+}

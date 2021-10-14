@@ -37,14 +37,14 @@ $cyan: #0dcaf0 !default;
 $colors: ( "blue": $blue, "indigo": $indigo, "purple": $purple, "pink": $pink, "red": $red, "orange": $orange, "yellow": $yellow, "green": $green, "teal": $teal, "cyan": $cyan, "white": $white, "gray": $gray-600, "gray-dark": $gray-800) !default;
 // scss-docs-end colors-map
 // scss-docs-start theme-color-variables
-$primary: $blue !default;
+$primary: darkgreen !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
-$dark: $gray-900 !default;
+$dark: white !default;
 // scss-docs-end theme-color-variables
 // scss-docs-start theme-colors-map
 $theme-colors: ( "primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark) !default;
@@ -713,10 +713,12 @@ $zindex-tooltip: 1080 !default;
 // scss-docs-start nav-variables
 $nav-link-padding-y: .5rem !default;
 $nav-link-padding-x: 1rem !default;
-$nav-link-font-size: null !default;
-$nav-link-font-weight: null !default;
-$nav-link-color: $link-color !default;
-$nav-link-hover-color: $link-hover-color !default;
+$nav-link-font-size: 20px !default;
+$nav-link-font-weight: 600 !default;
+$nav-link-color: darkgreen !default;
+$nav-link-hover-color: rgb(116,
+48,
+48) !default;
 $nav-link-transition: color .15s ease-in-out,
 background-color .15s ease-in-out,
 border-color .15s ease-in-out !default;
@@ -751,16 +753,20 @@ $navbar-toggler-focus-width: $btn-focus-width !default;
 $navbar-toggler-transition: box-shadow .15s ease-in-out !default;
 // scss-docs-end navbar-variables
 // scss-docs-start navbar-theme-variables
-$navbar-dark-color: rgba($white,
-.55) !default;
-$navbar-dark-hover-color: rgba($white,
-.75) !default;
-$navbar-dark-active-color: $white !default;
-$navbar-dark-disabled-color: rgba($white,
-.25) !default;
-$navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
-$navbar-dark-toggler-border-color: rgba($white,
-.1) !default;
+$navbar-dark-color: darkgreen !default;
+$navbar-dark-hover-color: rgb(116,
+48,
+48) !default;
+$navbar-dark-active-color: rgb(116,
+48,
+48) !default;
+$navbar-dark-disabled-color: rgb(116,
+48,
+48) !default;
+$navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{darkgreen}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-dark-toggler-border-color: darkgreen(116,
+48,
+48) !default;
 $navbar-light-color: rgba($black,
 .55) !default;
 $navbar-light-hover-color: rgba($black,
@@ -774,8 +780,8 @@ $navbar-light-toggler-border-color: rgba($black,
 .1) !default;
 $navbar-light-brand-color: $navbar-light-active-color !default;
 $navbar-light-brand-hover-color: $navbar-light-active-color !default;
-$navbar-dark-brand-color: $navbar-dark-active-color !default;
-$navbar-dark-brand-hover-color: $navbar-dark-active-color !default;
+$navbar-dark-brand-color: darkgreen !default;
+$navbar-dark-brand-hover-color: darkgreen !default;
 // scss-docs-end navbar-theme-variables
 // Dropdowns
 //
@@ -832,24 +838,32 @@ $pagination-padding-y-sm: .25rem !default;
 $pagination-padding-x-sm: .5rem !default;
 $pagination-padding-y-lg: .75rem !default;
 $pagination-padding-x-lg: 1.5rem !default;
-$pagination-color: $link-color !default;
-$pagination-bg: $white !default;
+$pagination-color: white !default;
+$pagination-bg: darkgreen !default;
 $pagination-border-width: $border-width !default;
 $pagination-border-radius: $border-radius !default;
 $pagination-margin-start: -$pagination-border-width !default;
 $pagination-border-color: $gray-300 !default;
-$pagination-focus-color: $link-hover-color !default;
-$pagination-focus-bg: $gray-200 !default;
+$pagination-focus-color: white !default;
+$pagination-focus-bg: rgb(0,
+163,
+0) !default;
 $pagination-focus-box-shadow: $input-btn-focus-box-shadow !default;
 $pagination-focus-outline: 0 !default;
-$pagination-hover-color: $link-hover-color !default;
-$pagination-hover-bg: $gray-200 !default;
+$pagination-hover-color: white !default;
+$pagination-hover-bg: rgb(0,
+163,
+0) !default;
 $pagination-hover-border-color: $gray-300 !default;
-$pagination-active-color: $component-active-color !default;
-$pagination-active-bg: $component-active-bg !default;
-$pagination-active-border-color: $pagination-active-bg !default;
-$pagination-disabled-color: $gray-600 !default;
-$pagination-disabled-bg: $white !default;
+$pagination-active-color: white !default;
+$pagination-active-bg: rgb(0,
+163,
+0) !default;
+$pagination-active-border-color: $gray-300 !default;
+$pagination-disabled-color: white !default;
+$pagination-disabled-bg: rgb(79,
+102,
+79) !default;
 $pagination-disabled-border-color: $gray-300 !default;
 $pagination-transition: color .15s ease-in-out,
 background-color .15s ease-in-out,

@@ -1,7 +1,11 @@
-@import "fonts";
-@import "product";
-@import "cart";
-@import "checkout";
+@import "./helpers/grid";
+@import "./helpers/fonts";
+@import "./page/product";
+@import "./page/checkout";
+@import "./component/navbar";
+@import "main";
+@import "./page/home";
+@import "./page/back";
 @import "~bootstrap/scss/functions";
 @import "./helpers/variables";
 @import "~bootstrap/scss/mixins";

@@ -3,35 +3,35 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center py-4">
-                <h1 class="display-4">優惠券管理</h1>
+                <h2><strong class="back_title display-3">優惠券管理</strong></h2>
             </div>
             <div class="col-12 d-flex justify-content-between flex-row-reverse py-3">
-                <button type="button" class="btn btn-primary" @click="openCouponModal(true)">新增優惠券</button>
+                <button type="button" class="main_btn px-3 py-2 fs-6" @click="openCouponModal(true)">新增優惠券</button>
             </div>
             <div class="col-12">
-                <table class="table table-hover align-middle text-center">
+                <table class="table table-hover align-middle text-center back_table">
                     <thead>
                         <tr>
-                            <th>名稱</th>
-                            <th>優惠碼</th>
-                            <th>折數</th>
-                            <th>是否啟用</th>
+                            <th width="20%">名稱</th>
+                            <th width="20%">優惠碼</th>
+                            <th width="18%">折數</th>
+                            <th width="35%">是否啟用</th>
                             <th>到期日</th>
-                            <th>編輯</th>
+                            <th width="40%">編輯</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="item in coupons" :key="item.id">
                             <td>{{ item.title }}</td>
                             <td>{{ item.code }}</td>
-                            <td>{{ item.percent }} %</td>
+                            <td>{{ item.percent }}</td>
                             <td>
                                 <span v-if="item.is_enabled" class="text-success">啟用</span>
                                 <span v-else class="text-muted">未啟用</span>
                             </td>
                             <td>{{ $filters.date(item.due_date) }}</td>
                             <td>
-                                <button type="button" class="btn btn-outline-primary me-2" @click="openCouponModal(false,item)">修改</button>
+                                <button type="button" class="btn btn-outline-primary" @click="openCouponModal(false,item)">修改</button>
                                 <button type="button" class="btn btn-outline-danger" @click="openDelModal(item)">刪除</button>
                             </td>
                         </tr>
@@ -93,7 +93,6 @@ export default {
                 this.modalCategory='編輯優惠券'
             }
             this.$refs.couponModal.showModal();
-            console.log(this.tempCoupon);
         },
         updateCoupon(item){
             let api =`${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon`;

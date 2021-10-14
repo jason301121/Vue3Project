@@ -3,8 +3,8 @@
         aria-labelledby="exampleModalLabel" aria-hidden="true" ref="modal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel"><slot name="modalCategory"></slot></h3>
+                <div class="modal-header back_modal_header">
+                    <h3 class="modal-title fw-bold" id="exampleModalLabel"><slot name="modalCategory"></slot></h3>
                     <button type="button" class="btn-close"
                             data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary"
+                <button type="button" class="btn main_btn"
                         @click="$emit('update-coupon', tempCoupon)">更新優惠券
                 </button>
                 </div>
