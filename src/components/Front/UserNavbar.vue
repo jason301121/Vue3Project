@@ -18,7 +18,7 @@
                     <i class="bi bi-cart-fill" style="font-size: 2rem;"></i>
                 </a>
                     <!-- 購物車Dropdown -->
-                <div class="p-2 me-3 dropdown-menu dropdown-menu-end navbar_cart" aria-labelledby="dropdownMenuButton1" >
+                <div class="p-1 me-3 dropdown-menu dropdown-menu-end navbar_cart" aria-labelledby="dropdownMenuButton1" >
                     <template v-if="cartLength !== 0">
                         <div v-for="item in cart.carts" :key="item.product.id" class="d-flex align-items-center my-2">
                             <div class="col-5 d-flex align-items-center justify-content-around">
@@ -46,10 +46,10 @@
                             <router-link to="/cart" class="main_btn navbar_btn">結帳去</router-link>
                         </div>
                     </template>
-                    <div v-else class="d-flex flex-column justify-content-center align-items-center my-2">
+                    <div v-else class="text-center mt-2">
                         <h2 class="my-3">購物車內沒有商品哦~</h2>
                         <div class="d-grid gap-2">
-                            <router-link to="/product" class="main_btn navbar_btn">再去逛逛</router-link>
+                            <router-link to="/product" class="main_btn py-1 fs-5 fw-normal">再去逛逛</router-link>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                     <i class="bi bi-cart-fill" style="font-size: 2rem;"></i>
                 </a>
                     <!-- 購物車Dropdown -->
-                <div class="p-2 me-3 dropdown-menu dropdown-menu-end navbar_cart" aria-labelledby="dropdownMenuButton1" >
+                <div class="p-1 me-3 dropdown-menu dropdown-menu-end navbar_cart" aria-labelledby="dropdownMenuButton1" >
                     <template v-if="cartLength !== 0">
                         <div v-for="item in cart.carts" :key="item.product.id" class="d-flex align-items-center my-2">
                             <div class="col-6 d-flex align-items-center">
@@ -106,7 +106,7 @@
                             <router-link to="/cart" class="main_btn py-1 fs-5 fw-normal">結帳去</router-link>
                         </div>
                     </template>
-                    <div v-else class="my-2">
+                    <div v-else class="mt-2">
                         <h2 class="text-center my-3">購物車內沒有商品哦~</h2>
                         <div class="d-grid gap-2">
                             <router-link to="/product" class="main_btn py-1 fs-5 fw-normal">再去逛逛</router-link>
