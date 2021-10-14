@@ -104,12 +104,12 @@
 
 //商品詳細
 .product_detail_img {
-    max-width: 100%;
-    height: auto;
+    width: auto;
+    height: 540px;
     object-fit: cover;
     @include Desktops {
-        // max-width: 40vw;
-        height: 40vh;
+        width: 100%;
+        height: 400px;
     }
     @include apple {
         min-width: 100%;

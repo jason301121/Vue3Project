@@ -1,16 +1,16 @@
 <template>
     <div class="container">
         <div class="row px-1">
-            <div class="col-12">
-                <a href="#" @click.prevent="goBack" >
-                    <i class="bi bi-arrow-left" style="font-size:3rem;color:black;"></i>
+            <div class="">
+                <a href="#" @click.prevent="goBack" class="fw-bold display-2" >
+                    <i class="bi bi-arrow-left"></i>
                 </a>
             </div>
-            <div class="col-sm-7 col-12  mb-2">
+            <div class="col-md-7 col-12 mb-2 text-center">
                 <img 
                 :src="product_detail.imageUrl" :alt="product_detail.title" class="product_detail_img">
             </div>
-            <div class="col-sm-5 product_detail_word">
+            <div class="col-md-5 product_detail_word">
                 <h1 class="display-4 fw-bold">{{ product_detail.title }}</h1>
                 <p class="product_detail_description my-3">{{ product_detail.description }}</p>
                 <p class="product_detail_content">
