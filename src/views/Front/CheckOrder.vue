@@ -8,10 +8,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12 py-5">
-                <div class="input-group justify-content-center">
-                    <input type="text" placeholder="請輸入訂單編號" v-model="orderId" style="width:80%;" class="fs-3">
-                    <button type="button" class="main_btn edit_add_btn fs-3" @click="checkOrder">送出</button>
-                    </div>
+                <div class="input-group justify-content-center d-flex flex-nowrap">
+                    <input type="text" placeholder="請輸入訂單編號" v-model="orderId" style="width:60%;" class="fs-3">
+                    <button type="button" class="main_btn edit_add_btn fs-3 text-nowrap" @click="checkOrder">送出</button>
+                </div>
             </div>
         </div>
         <div class="row my-5" v-if="order.total">
