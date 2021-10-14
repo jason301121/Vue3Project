@@ -104,9 +104,10 @@
 
 //商品詳細
 .product_detail_img {
-    width: auto;
-    height: 540px;
+    height: 500px;
+    width: 100%;
     object-fit: cover;
+    background-position: center center;
     @include Desktops {
         width: 100%;
         height: 400px;

@@ -5,6 +5,17 @@
                 <a href="#" @click.prevent="goBack" class="fw-bold display-2" >
                     <i class="bi bi-arrow-left"></i>
                 </a>
+                <nav class="fw-bolder">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <router-link to="/" class="text-decoration-none">首頁</router-link>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <router-link to="/product" class="text-decoration-none">全部商品</router-link>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ product_detail.title }}</li>
+                    </ol>
+                </nav>
             </div>
             <div class="col-md-7 col-12 mb-2 text-center">
                 <img 
