@@ -22,6 +22,10 @@
     border-bottom-right-radius: 0px !important
 }
 
+input[type="number"]:disabled {
+    background: white;
+}
+
 
 /*隱藏number箭頭*/
 

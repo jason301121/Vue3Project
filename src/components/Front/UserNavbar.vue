@@ -21,12 +21,11 @@
                 <div class="p-1 me-3 dropdown-menu dropdown-menu-end navbar_cart" aria-labelledby="dropdownMenuButton1" >
                     <template v-if="cartLength !== 0">
                         <div v-for="item in cart.carts" :key="item.product.id" class="d-flex align-items-center my-2">
-                            <div class="col-5 d-flex align-items-center justify-content-around">
+                            <div class="col-4 d-flex align-items-center ">
                                 <a href="#" class="shake" @click.prevent="delCart(item.id)"><i class="bi bi-trash-fill" style="font-size: 1.5rem; color:red;"></i></a>
-                                <!-- <div class="mx-3" :style="{ 'background-image' : `url(${ item.product.imageUrl })`}" style="background-size: cover; background-position: center center; height: 50px; width: 70px;"></div> -->
-                                <div>{{ item.product.title }}</div>
+                                <div class="text-start ms-2">{{ item.product.title }}</div>
                             </div>
-                            <div class="col-7 ps-2 d-flex align-items-center justify-content-evenly">
+                            <div class="col-8 ps-2 d-flex align-items-center justify-content-start">
                                 <div class="input-number-group-sm input-group-sm d-flex align-items-center">
                                     <button type="button" class="main_btn edit_dash_btn" @click.prevent="editCart(item, item.qty-1)"
                                     :disabled="item.qty == 1" >
