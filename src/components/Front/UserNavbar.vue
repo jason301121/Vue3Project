@@ -18,7 +18,7 @@
                     <i class="bi bi-cart-fill" style="font-size: 2rem;"></i>
                 </a>
                     <!-- 購物車Dropdown -->
-                <div class="p-1 me-3 dropdown-menu dropdown-menu-end navbar_cart" aria-labelledby="dropdownMenuButton1" >
+                <div class="p-1 me-2 dropdown-menu dropdown-menu-end navbar_cart" aria-labelledby="dropdownMenuButton1" >
                     <template v-if="cartLength !== 0">
                         <div v-for="item in cart.carts" :key="item.product.id" class="d-flex align-items-center my-2">
                             <div class="col-4 d-flex align-items-center ">
@@ -31,11 +31,11 @@
                                     :disabled="item.qty == 1" >
                                         <i class="bi bi-dash"></i>
                                     </button>
-                                    <input type="number" class="text-center form-control border-0" style="width:50px;" disabled v-model="item.qty" min="1">
+                                    <input type="number" class="text-center form-control border-0" style="width:20%;" disabled v-model="item.qty" min="1">
                                     <button type="button" class="main_btn edit_add_btn" @click.prevent="editCart(item, item.qty+1)">
                                         <i class="bi bi-plus"></i>
                                     </button>
-                                    <strong class="ms-3">$ {{ $filters.currency(item.total) }}</strong>
+                                    <strong class="ms-3 text-nowrap">$ {{ $filters.currency(item.total) }}</strong>
                                 </div>
                             </div>
                         </div>
