@@ -1,16 +1,16 @@
 <template>
     <div class="container">
-        <div class="row ps-2">
+        <div class="row px-1">
             <div class="col-12">
                 <a href="#" @click.prevent="goBack" >
                     <i class="bi bi-arrow-left" style="font-size:3rem;color:black;"></i>
                 </a>
             </div>
-            <div class="col-sm-7 col-12">
+            <div class="col-sm-7 col-12  mb-2">
                 <img 
                 :src="product_detail.imageUrl" :alt="product_detail.title" class="product_detail_img">
             </div>
-            <div class="col-sm-5 col-12 product_detail_word">
+            <div class="col-sm-5 product_detail_word">
                 <h1 class="display-4 fw-bold">{{ product_detail.title }}</h1>
                 <p class="product_detail_description my-3">{{ product_detail.description }}</p>
                 <p class="product_detail_content">
@@ -21,18 +21,18 @@
                     <p class="fs-3" v-else>$ {{ $filters.currency(product_detail.origin_price) }}</p>
                     <p class="fs-3 text-danger" v-if="product_detail.origin_price !== product_detail.price">特價 : $ {{ $filters.currency(product_detail.price) }}</p>
                 </div>
-                <div class="d-flex justify-content-evenly">
-                    <div class="d-flex align-items-center circle_input fw-bold">
-                        <button :disabled="qty == 1 " type="button" class="circle_input_btn" @click.prevent="editqty(qty-1)">
-                            <i class="bi bi-dash-circle"></i>
-                        </button>
-                        <input type="number" class="text-center fw-bold border-0" v-model="qty" min="1">
-                        <button type="button" class="circle_input_btn" @click.prevent="editqty(qty+1)">
-                            <i class="bi bi-plus-circle"></i>
-                        </button>
+                    <div class="d-flex">
+                        <div class="d-flex circle_input w-100">
+                            <button :disabled="qty == 1 " type="button" class="circle_input_btn" @click.prevent="editqty(qty-1)">
+                                <i class="bi bi-dash-circle"></i>
+                            </button>
+                            <input type="number" class="text-center fw-bold border-0" v-model="qty" min="1">
+                            <button type="button" class="circle_input_btn" @click.prevent="editqty(qty+1)">
+                                <i class="bi bi-plus-circle"></i>
+                            </button>
+                            <button type="button" class="product_detail_btn fw-bold text-nowrap" @click="addCart">加入購物車</button>
+                        </div>
                     </div>
-                    <button type="button" class="product_detail_btn fw-bold" @click="addCart">加入購物車</button>
-                </div>
             </div>
         </div>
         <div class="row my-5">

@@ -104,12 +104,15 @@
 
 //商品詳細
 .product_detail_img {
-    max-height: 500px;
-    min-width: 100%;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     @include Desktops {
-        max-width: 40vw;
+        // max-width: 40vw;
         height: 40vh;
+    }
+    @include apple {
+        min-width: 100%;
     }
 }
 
@@ -146,9 +149,14 @@
     font-size: 18px;
     padding: 15px 20px;
     border-radius: 5px;
+    margin-left: 10rem;
     @include Desktops {
-        width: 50vw;
-        font-size: 16px
+        max-width: 30vw;
+        font-size: 16px;
+        margin: 0;
+    }
+    @include apple {
+        // margin-left: 15rem;
     }
 }
 
