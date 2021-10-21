@@ -4,15 +4,20 @@
     <Navbar></Navbar>
     <router-view></router-view>
   </div>
+  <Footer></Footer>
+
 </template>
 
 <script>
 import Navbar from '@/components/Front/UserNavbar.vue';
+import Footer from '@/components/all/Footer.vue';
+
 
 export default {
   name: 'Home',
   components: {
     Navbar,
+    Footer,
   },
   computed:{
     isLoading () {

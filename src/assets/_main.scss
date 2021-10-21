@@ -1,3 +1,11 @@
+html {
+    height: 100%;
+}
+
+#app {
+    min-height: 100vh;
+}
+
 //按鈕行為
 .main_btn {
     background-color: darkgreen !important;
@@ -68,6 +76,8 @@ input[type="number"] {
     a:not([hover]) {
         color: white;
     }
+    position: sticky;
+    top: 100%;
 }
 
 //主題字體

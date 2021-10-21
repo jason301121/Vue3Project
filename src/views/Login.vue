@@ -1,5 +1,5 @@
 <template>
-    <div class="container mt-5">
+    <div class="container mt-5 login">
         <form class="row justify-content-center" @submit.prevent="signIn">
         <div class="col-md-6">
             <h1 class="mb-3 fw-bold text-center">後台管理</h1>
@@ -23,10 +23,8 @@
                 class="form-control"
                 placeholder="Password"
                 required
-                v-model="user.password"
-            />
+                v-model="user.password"/>
             </div>
-        
             <div class="text-end my-4">
             <button class="main_btn py-2 px-3 fs-5" type="submit">登入</button>
             </div>

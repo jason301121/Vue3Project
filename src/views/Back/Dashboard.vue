@@ -2,17 +2,22 @@
 <Navbar></Navbar>
 <Messages></Messages>
 <router-view></router-view>
+<Footer></Footer>
 </template>
 
 <script>
 import emitter from '@/methods/emitter';
 import Navbar from '@/components/Back/Navbar.vue';
 import Messages from '@/components/all/MessageList.vue';
+import Footer from '@/components/all/Footer.vue';
+
 
 export default {
     components:{
         Navbar,
-        Messages
+        Messages,
+        Footer,
+
     },
     provide() {
         return {
