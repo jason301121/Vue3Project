@@ -116,7 +116,7 @@ export default {
         },
         backToHome(){
             this.$router.push('/');
-        }
+        },
     },
     created() {
         this.orderId = this.$route.params.orderId;

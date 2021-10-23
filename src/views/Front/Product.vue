@@ -125,6 +125,7 @@ export default {
             }, 1000);
         },
         goDetail(item){
+            console.log(item);
             this.$router.push(`/productdetail/${item.id}`);
         },
         getFavorite(){

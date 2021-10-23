@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex';
 
 export default {
     data() {
@@ -81,9 +82,11 @@ export default {
             .then((res)=>{
                 if(res.data.success){
                     this.$router.push(`/checkoutpay/${res.data.orderId}`);
+                    this.getCart();
                 }
             })
-        }
+        },
+        ...mapActions('carts',['getCart']),
     },
 }
 </script>
